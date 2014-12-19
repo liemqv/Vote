@@ -16,6 +16,7 @@ const
   config = {
     datadb: 'https://liemqv.iriscouch.com/classic-voting/'
   },
+  host = location.origin,
   app = express();
 
 /* BEGIN: Redis */
@@ -42,8 +43,8 @@ passport.deserializeUser(function(id, done) {
   done(null, { identifier: id });
 });
 passport.use(new GoogleStrategy({
-    returnURL: 'http://localhost:3000/auth/google/return',
-    realm: 'http://localhost:3000/'
+    returnURL: host + '/auth/google/return',
+    realm: host
   },
   function(identifier, profile, done) {
     log.info('PASSPORT USE', profile);
