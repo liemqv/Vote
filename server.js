@@ -144,7 +144,7 @@ app.put('/api/user/bundles', [authed, json()], function(req, res) {
 });
 
 /* END: Process request */
-
-app.listen(80, function(){
-  console.log("I'm Ready...");
+var port = process.env.PORT || 3000;
+app.listen(port, function(){
+  console.log("I'm ready on port "+ port +"...");
 });
