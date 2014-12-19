@@ -19,7 +19,7 @@ const
   host = {
     live: 'https://classic-vote.herokuapp.com',
     dev: 'http://localhost:3000'
-  }
+  },
   app = express();
 
 /* BEGIN: Redis */
