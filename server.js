@@ -16,7 +16,10 @@ const
   config = {
     datadb: 'https://liemqv.iriscouch.com/classic-voting/'
   },
-  host = location.origin,
+  host = {
+    live: 'https://classic-vote.herokuapp.com',
+    dev: 'http://localhost:3000'
+  }
   app = express();
 
 /* BEGIN: Redis */
@@ -43,8 +46,8 @@ passport.deserializeUser(function(id, done) {
   done(null, { identifier: id });
 });
 passport.use(new GoogleStrategy({
-    returnURL: host + '/auth/google/return',
-    realm: host
+    returnURL: host.live + '/auth/google/return',
+    realm: host.live
   },
   function(identifier, profile, done) {
     log.info('PASSPORT USE', profile);
