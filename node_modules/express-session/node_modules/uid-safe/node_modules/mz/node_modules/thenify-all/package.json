@@ -1,0 +1,64 @@
+{
+  "name": "thenify-all",
+  "description": "Promisifies all the selected functions in an object",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jonathan Ong",
+    "email": "me@jongleberry.com",
+    "url": "http://jongleberry.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thenables/thenify-all"
+  },
+  "dependencies": {
+    "thenify": "2"
+  },
+  "devDependencies": {
+    "mocha": "2",
+    "istanbul": "0"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot"
+  },
+  "keywords": [
+    "promisify",
+    "promise",
+    "thenify",
+    "then",
+    "es6"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "gitHead": "e4560648593a3d83d17349cb94f1a3cbe481b768",
+  "bugs": {
+    "url": "https://github.com/thenables/thenify-all/issues"
+  },
+  "homepage": "https://github.com/thenables/thenify-all",
+  "_id": "thenify-all@1.0.0",
+  "_shasum": "3663df4aed595ff671467c0683cd74350b87e1cf",
+  "_from": "thenify-all@1",
+  "_npmVersion": "2.1.12",
+  "_nodeVersion": "0.11.14",
+  "_npmUser": {
+    "name": "jongleberry",
+    "email": "jonathanrichardong@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "jongleberry",
+      "email": "jonathanrichardong@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "3663df4aed595ff671467c0683cd74350b87e1cf",
+    "tarball": "http://registry.npmjs.org/thenify-all/-/thenify-all-1.0.0.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/thenify-all/-/thenify-all-1.0.0.tgz",
+  "readme": "ERROR: No README data found!"
+}

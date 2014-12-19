@@ -1,0 +1,7 @@
+[
+{"voteid" : "Goole", "votename" : "Google", "voteimage": "Google.png", "moreinfo" : "google.com, gmail, gmaps..."},
+{"voteid" : "Facebook", "votename" : "Facebook", "voteimage": "Facebook.png", "moreinfo" : "facebook.com"},
+{"voteid" : "Microsoft", "votename" : "Microsoft", "voteimage": "Microsoft.png", "moreinfo" : "MS Office, Outlook..."},
+{"voteid" : "IBM", "votename" : "IBM", "voteimage": "IBM.png", "moreinfo" : "IBM, Thinkpad, Smarter Planet..."},
+{"voteid" : "Yahoo", "votename" : "Yahoo", "voteimage": "Yahoo.png", "moreinfo" : "Yahoo messenger, Yahoo mail..."}
+]
