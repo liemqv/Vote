@@ -1,7 +1,7 @@
 var db = require('../lib/db');
+require('array.prototype.find');
 
 var VoteItemSchema = new db.Schema({
-	voteid : {type: String},
 	userid: {type: String},
 	votedate  :  { type: Date, default: Date.now }
 })
@@ -38,23 +38,29 @@ function addBlankVote(voteid, votename, voteimage, moreinfo, callback) {
 	});
 }
 
-function addVoteItem(voteid, voteitem, callback) {
-	MyVote.findOne({ voteid: voteid }).exec(function (err, vote) {
+function addVoteItem(_voteid, voteitem, callback) {
+	MyVote.findOne({ 'voteid': _voteid}, 'voteid voting', function (err, _vote) {
 	  	if (err) {
 	  		callback(err);
+	  	} else {
+		  	// add a voting
+		  	if(_vote.voting.length == 0 || _vote.voting.find(function(item) {return item.userid == voteitem.userid;}) === undefined) {
+		  			_vote.voting.push(voteitem);
+		  			_vote.save(function (err) {
+						if (err) {
+							callback(err);
+							console.log("Mongo VoteItem Insert failed: " + err);
+						}
+						else {
+							callback(null, this);
+							console.log("Mongo VoteItem Insert success");
+						}
+					});
+	  		} else {
+	  			console.log("User " + voteitem.userid + " has voted " + _voteid);
+	  			callback(null, {});
+	  		}
 	  	}
-	  	// add a voting
-	  	vote.voting.push(voteitem);
-	  	vote.save(function (err) {
-			if (err) {
-				callback(err);
-				console.log("Mongo VoteItem Insert failed: " + err);
-			}
-			else {
-				callback(null, instance);
-				console.log("Mongo VoteItem Insert success");
-			}
-		});
 	});
 }
 

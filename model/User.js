@@ -13,6 +13,7 @@ module.exports.addUser = addUser;
 function addUser(userid, username, fullname, moreinfo, callback) {
 	MyUser.findOne({ userid: userid }, function(err, user){
 		if(user) {
+			console.log("Existed user " + user.username);
 			user.username = username;
 			user.fullname = fullname;
 			user.moreinfo = moreinfo;

@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Classic-Voting - The Classic Voting System</title>
+  <title>Classic Voting - The Classic Voting System by liemqv</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="bootstrap/dist/css/bootstrap-theme.min.css">
@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="app.css">
 </head>
 <body class="container">
-  
   <script id="list-vote-template" type="text/x-handlebars-template">
     <table class="table">
       <thead>
@@ -19,6 +18,7 @@
           <th>Name</th>
           <th>Image</th>
           <th>Info</th>
+          <th>Vote</th>
           <th class="actions">Vote</th>
         </tr>
       </thead>
@@ -29,6 +29,7 @@
           <td>{{votename}}</td>
           <td><img src='/images/{{voteimage}}' /></td>
           <td>{{moreinfo}}</td>
+          <td>{{count_vote}}</td>
           <td class="actions">
             <button type="button" class="btn btn-primary vote">
               <abbr title="add vote" class="glyphicon glyphicon-star">
@@ -47,6 +48,10 @@
       <button type="button" class="close" aria-hidden="true">&times;</button>
       <strong>Error!</strong> <span class="message"></span>
     </div>
+    <div class="alert alert-info" style="display:none">
+      <button type="button" class="close" aria-hidden="true">&times;</button>
+      <strong>Info!</strong> <span class="message"></span>
+    </div>
   </div>
   
   <h1>Classic Vote System</h1>
@@ -54,7 +59,8 @@
   <div id="index-view" class="view">
 
     <p>
-      <a class="btn btn-primary" href="/auth/google">Log in with Google</a>
+      <a class="btn btn-danger" href="/auth/google">Login with Google</a>
+      <a class="btn btn-primary" href="/auth/facebook">Login with Facebook</a>
     </p>
     
   </div>
