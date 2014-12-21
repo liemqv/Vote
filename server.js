@@ -40,8 +40,8 @@ passport.deserializeUser(function(id, done) {
 });
 
 passport.use(new GoogleStrategy({
-    returnURL: host.dev + '/auth/google/return',
-    realm: host.dev
+    returnURL: host.live + '/auth/google/return',
+    realm: host.live
   },
   function(identifier, profile, done) {
     log.info('Google profile', profile);
