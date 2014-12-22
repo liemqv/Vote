@@ -186,5 +186,6 @@ app.put('/api/vote/:id', [authed, json()], function(req, res) {
 /* END: Process request */
 var port = process.env.PORT || 3000;
 app.listen(port, function(){
-  console.log("I'm ready on port "+ port +"...");
+  log.info("MAIN", "I'm ready on port "+ port +"...");
+  log.info('MAIN', 'Url live = ' + host.live);
 });
